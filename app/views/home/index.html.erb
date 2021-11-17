@@ -1,2 +1,7 @@
-<h1>Online Portal for Farmers</h1>
-<p>This page can be edited in app/views/home/index.html.erb</p>
+<h1>An Online Portal for the Farmers</h1>
+
+<h2>For Farmers</h2>
+<%= link_to 'Farmer Sign Up', new_farmer_registration_path, class:"btn btn-secondary" %><br>
+<%= link_to 'Farmer Sign In', new_farmer_session_path, class:"btn btn-secondary" %><br>
+<%= link_to 'Farmer Sign Out', destroy_farmer_session_path, method: :delete, class:"btn btn-secondary" %><br>
+<%= link_to 'Farmer Edit', edit_farmer_registration_path, class:"btn btn-secondary" %><br>
