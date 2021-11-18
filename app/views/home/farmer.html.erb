@@ -1,0 +1,11 @@
+<h1>Welcome Farmer</h1>
+
+<br>
+
+<% if farmer_signed_in? %>
+    <%= link_to 'Sign Out', destroy_farmer_session_path, method: :delete, class:"btn btn-secondary" %><br>
+    <%= link_to 'Edit', edit_farmer_registration_path, class:"btn btn-secondary" %><br>
+<% else %>
+    <%= link_to 'Sign Up', new_farmer_registration_path, class:"btn btn-secondary" %><br>
+    <%= link_to 'Sign In', new_farmer_session_path, class:"btn btn-secondary" %><br>
+<% end %>
