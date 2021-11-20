@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aadhar:</strong>
+  <%= @fbasic.aadhar %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fbasic.name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @fbasic.dob %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @fbasic.gender %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @fbasic.address %>
+</p>
+
+<p>
+  <strong>Pincode:</strong>
+  <%= @fbasic.pincode %>
+</p>
+
+<p>
+  <strong>Mobno:</strong>
+  <%= @fbasic.mobno %>
+</p>
+
+<%= link_to 'Edit', edit_fbasic_path(@fbasic) %> |
+<%= link_to 'Back', fbasics_path %>
