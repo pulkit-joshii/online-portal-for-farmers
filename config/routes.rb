@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :fbasics
   devise_for :officers
   
   devise_for :farmer
