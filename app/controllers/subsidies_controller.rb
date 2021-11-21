@@ -65,6 +65,6 @@ class SubsidiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subsidy_params
-      params.require(:subsidy).permit(:surveyno, :cropname, :amount, :farmer_id)
+      params.require(:subsidy).permit(:surveyno, :cropname, :amount, :farmer_id, :approved)
     end
 end

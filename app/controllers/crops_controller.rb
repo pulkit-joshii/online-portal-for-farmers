@@ -65,6 +65,6 @@ class CropsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def crop_params
-      params.require(:crop).permit(:surveyno, :name, :area, :farmer_id)
+      params.require(:crop).permit(:surveyno, :name, :area, :farmer_id, :approved)
     end
 end

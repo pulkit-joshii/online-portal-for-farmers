@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_150922) do
+ActiveRecord::Schema.define(version: 2021_11_21_152045) do
+
+  create_table "compensations", force: :cascade do |t|
+    t.string "natcalname"
+    t.string "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "farmer_id"
+    t.boolean "approved", default: true
+    t.index ["farmer_id"], name: "index_compensations_on_farmer_id"
+  end
 
   create_table "crops", force: :cascade do |t|
     t.string "surveyno"
