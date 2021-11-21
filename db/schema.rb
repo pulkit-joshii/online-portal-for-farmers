@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_145017) do
+ActiveRecord::Schema.define(version: 2021_11_21_150922) do
 
   create_table "crops", force: :cascade do |t|
     t.string "surveyno"
@@ -47,6 +47,19 @@ ActiveRecord::Schema.define(version: 2021_11_21_145017) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "farmer_id"
     t.index ["farmer_id"], name: "index_fbasics_on_farmer_id"
+  end
+
+  create_table "insurances", force: :cascade do |t|
+    t.string "surveyno"
+    t.string "cropname"
+    t.string "amount"
+    t.string "rate"
+    t.string "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "farmer_id"
+    t.boolean "approved", default: true
+    t.index ["farmer_id"], name: "index_insurances_on_farmer_id"
   end
 
   create_table "lands", force: :cascade do |t|

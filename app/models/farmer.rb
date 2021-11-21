@@ -8,4 +8,5 @@ class Farmer < ApplicationRecord
          has_many :lands
          has_many :crops
          has_many :subsidies
+         has_many :insurances
 end
