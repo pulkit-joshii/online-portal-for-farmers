@@ -5,4 +5,5 @@ class Farmer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_one :fbasic
+         has_many :lands
 end

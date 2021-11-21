@@ -1,11 +1,8 @@
-<p id="notice"><%= notice %></p>
+<%#<p id="notice"><%= notice %></p>
 
 <h1>Basic Details</h1>
-<%#<% added =false %>
 
-<%#<%= added %>
-
-<%#<% if added %>
+<% if @fbasics.length > 1 %>
   <table>
     <thead>
       <tr>
@@ -31,7 +28,7 @@
             <td><%= fbasic.address %></td>
             <td><%= fbasic.pincode %></td>
             <td><%= fbasic.mobno %></td>
-            <td><%= link_to 'Show', fbasic %></td>
+            <%#<td><%= link_to 'Show', fbasic %></td>
             <td><%= link_to 'Edit', edit_fbasic_path(fbasic) %></td>
             <td><%= link_to 'Destroy', fbasic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
@@ -41,9 +38,12 @@
   </table>
 
 
-<%#<% elsif !added %>
-<%#<% added = true %>
+<% else %>
   
   <%= link_to 'Add Basic Details', new_fbasic_path %>
 
-<%#<% end %>
+<% end %>
+
+<br>
+
+<%= link_to 'Home', 'farmer' %>

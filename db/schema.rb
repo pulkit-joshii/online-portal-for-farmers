@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_102832) do
+ActiveRecord::Schema.define(version: 2021_11_21_053209) do
 
   create_table "farmers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +36,34 @@ ActiveRecord::Schema.define(version: 2021_11_18_102832) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "farmer_id"
     t.index ["farmer_id"], name: "index_fbasics_on_farmer_id"
+  end
+
+  create_table "lands", force: :cascade do |t|
+    t.string "surveyno"
+    t.string "area"
+    t.string "village"
+    t.string "agrioffice"
+    t.string "district"
+    t.string "ownershiptype"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "farmer_id"
+    t.boolean "approved", default: true
+    t.index ["farmer_id"], name: "index_lands_on_farmer_id"
+  end
+
+  create_table "obasics", force: :cascade do |t|
+    t.integer "aadhar"
+    t.string "name"
+    t.string "dob"
+    t.string "gender"
+    t.string "address"
+    t.integer "pincode"
+    t.integer "mob_no"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "officer_id"
+    t.index ["officer_id"], name: "index_obasics_on_officer_id"
   end
 
   create_table "officers", force: :cascade do |t|
