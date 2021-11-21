@@ -7,4 +7,5 @@ class Farmer < ApplicationRecord
          has_one :fbasic
          has_many :lands
          has_many :crops
+         has_many :subsidies
 end

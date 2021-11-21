@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :subsidies
+
   resources :crops
+  
   resources :lands
   
   resources :obasics
