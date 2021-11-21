@@ -1,0 +1,29 @@
+<%# <p id="notice"><%= notice %></p> 
+
+<h1>Compensations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Natcalname</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Compensation.all.each do |compensation| %>
+      <% if compensation.approved? %>
+        <tr>
+          <td><%= compensation.natcalname %></td>
+          <td><%= compensation.amount %></td>
+          <td><%= link_to 'Approve', data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Home', 'officer' %>

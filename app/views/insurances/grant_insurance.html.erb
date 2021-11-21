@@ -1,0 +1,35 @@
+<%# <p id="notice"><%= notice %></p>
+
+<h1>Insurances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Surveyno</th>
+      <th>Cropname</th>
+      <th>Amount</th>
+      <th>Rate</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Insurance.all.each do |insurance| %>
+      <% if insurance.approved? %>
+        <tr>
+          <td><%= insurance.surveyno %></td>
+          <td><%= insurance.cropname %></td>
+          <td><%= insurance.amount %></td>
+          <td><%= insurance.rate %></td>
+          <td><%= insurance.year %></td>
+          <td><%= link_to 'Grant', data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Home', 'officer' %>
