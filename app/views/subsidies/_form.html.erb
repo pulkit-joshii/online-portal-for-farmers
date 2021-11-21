@@ -1,0 +1,36 @@
+<%= form_with(model: subsidy) do |form| %>
+  <% if subsidy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subsidy.errors.count, "error") %> prohibited this subsidy from being saved:</h2>
+
+      <ul>
+        <% subsidy.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :surveyno %>
+    <%= form.text_field :surveyno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cropname %>
+    <%= form.text_field :cropname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :farmer_id, id: :subsidy_farmer_id, value: current_farmer.id, type: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

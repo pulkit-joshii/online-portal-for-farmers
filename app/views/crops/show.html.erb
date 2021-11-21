@@ -1,0 +1,19 @@
+<%# <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Surveyno:</strong>
+  <%= @crop.surveyno %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @crop.name %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @crop.area %>
+</p>
+
+<%= link_to 'Edit', edit_crop_path(@crop) %> |
+<%= link_to 'Back', crops_path %>

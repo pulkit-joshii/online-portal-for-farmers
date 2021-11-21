@@ -1,0 +1,14 @@
+<%# <p id="notice"><%= notice %></p> 
+
+<p>
+  <strong>Natcalname:</strong>
+  <%= @compensation.natcalname %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @compensation.amount %>
+</p>
+
+<%= link_to 'Edit', edit_compensation_path(@compensation) %> |
+<%= link_to 'Back', compensations_path %>

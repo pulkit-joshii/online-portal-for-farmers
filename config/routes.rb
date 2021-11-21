@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :compensations
+  resources :insurances
+  resources :subsidies
+
+  resources :crops
+  
   resources :lands
   
   resources :obasics

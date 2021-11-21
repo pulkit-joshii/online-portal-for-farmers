@@ -1,0 +1,31 @@
+<%= form_with(model: compensation) do |form| %>
+  <% if compensation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(compensation.errors.count, "error") %> prohibited this compensation from being saved:</h2>
+
+      <ul>
+        <% compensation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :natcalname %>
+    <%= form.text_field :natcalname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :farmer_id, id: :compensation_farmer_id, value: current_farmer.id, type: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
