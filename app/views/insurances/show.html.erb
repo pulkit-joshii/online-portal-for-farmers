@@ -1,0 +1,29 @@
+<%# <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Surveyno:</strong>
+  <%= @insurance.surveyno %>
+</p>
+
+<p>
+  <strong>Cropname:</strong>
+  <%= @insurance.cropname %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @insurance.amount %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @insurance.rate %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @insurance.year %>
+</p>
+
+<%= link_to 'Edit', edit_insurance_path(@insurance) %> |
+<%= link_to 'Back', insurances_path %>

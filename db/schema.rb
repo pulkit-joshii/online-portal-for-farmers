@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_053209) do
+ActiveRecord::Schema.define(version: 2021_11_21_152045) do
+
+  create_table "compensations", force: :cascade do |t|
+    t.string "natcalname"
+    t.string "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "farmer_id"
+    t.boolean "approved", default: true
+    t.index ["farmer_id"], name: "index_compensations_on_farmer_id"
+  end
+
+  create_table "crops", force: :cascade do |t|
+    t.string "surveyno"
+    t.string "name"
+    t.string "area"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "farmer_id"
+    t.boolean "approved", default: true
+    t.index ["farmer_id"], name: "index_crops_on_farmer_id"
+  end
 
   create_table "farmers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +57,19 @@ ActiveRecord::Schema.define(version: 2021_11_21_053209) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "farmer_id"
     t.index ["farmer_id"], name: "index_fbasics_on_farmer_id"
+  end
+
+  create_table "insurances", force: :cascade do |t|
+    t.string "surveyno"
+    t.string "cropname"
+    t.string "amount"
+    t.string "rate"
+    t.string "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "farmer_id"
+    t.boolean "approved", default: true
+    t.index ["farmer_id"], name: "index_insurances_on_farmer_id"
   end
 
   create_table "lands", force: :cascade do |t|
@@ -76,6 +110,17 @@ ActiveRecord::Schema.define(version: 2021_11_21_053209) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_officers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_officers_on_reset_password_token", unique: true
+  end
+
+  create_table "subsidies", force: :cascade do |t|
+    t.string "surveyno"
+    t.string "cropname"
+    t.string "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "farmer_id"
+    t.boolean "approved", default: true
+    t.index ["farmer_id"], name: "index_subsidies_on_farmer_id"
   end
 
 end

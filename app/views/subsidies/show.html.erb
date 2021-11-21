@@ -1,0 +1,19 @@
+<%# <p id="notice"><%= notice %></p> 
+
+<p>
+  <strong>Surveyno:</strong>
+  <%= @subsidy.surveyno %>
+</p>
+
+<p>
+  <strong>Cropname:</strong>
+  <%= @subsidy.cropname %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @subsidy.amount %>
+</p>
+
+<%= link_to 'Edit', edit_subsidy_path(@subsidy) %> |
+<%= link_to 'Back', subsidies_path %>

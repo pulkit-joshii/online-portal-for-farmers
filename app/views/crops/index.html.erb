@@ -1,0 +1,37 @@
+<%# <p id="notice"><%= notice %></p> 
+
+<h1>Crops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Surveyno</th>
+      <th>Name</th>
+      <th>Area</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crops.each do |crop| %>
+      <% if crop.farmer == current_farmer %>
+        <tr>
+          <td><%= crop.surveyno %></td>
+          <td><%= crop.name %></td>
+          <td><%= crop.area %></td>
+          <td><%= link_to 'Show', crop %></td>
+          <td><%= link_to 'Edit', edit_crop_path(crop) %></td>
+          <td><%= link_to 'Destroy', crop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crop', new_crop_path %>
+
+<br>
+
+<%= link_to 'Home', 'farmer' %>
