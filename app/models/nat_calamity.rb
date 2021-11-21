@@ -1,0 +1,2 @@
+class NatCalamity < ApplicationRecord
+end

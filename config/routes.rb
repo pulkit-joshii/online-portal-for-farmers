@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :nat_calamities
   resources :compensations
   resources :insurances
   resources :subsidies

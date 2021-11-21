@@ -1,0 +1,37 @@
+<%= form_with(model: nat_calamity) do |form| %>
+  <% if nat_calamity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nat_calamity.errors.count, "error") %> prohibited this nat_calamity from being saved:</h2>
+
+      <ul>
+        <% nat_calamity.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.text_field :month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
