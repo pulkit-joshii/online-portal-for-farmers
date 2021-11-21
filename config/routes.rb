@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :lands
   
+  resources :obasics
+  
   resources :fbasics
 
   devise_for :officers
@@ -15,8 +17,5 @@ Rails.application.routes.draw do
   get "/officer", to: "home#officer"
 
   root 'home#index'
-  
-  # simple change
-  # another change
 
 end

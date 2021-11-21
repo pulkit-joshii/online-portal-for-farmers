@@ -1,0 +1,47 @@
+<%# <p id="notice"><%= notice %></p> 
+
+<h1>Basic Details</h1>
+
+<% if @obasics.length > 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th>Aadhar</th>
+        <th>Name</th>
+        <th>Dob</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Pincode</th>
+        <th>Mob no</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @obasics.each do |obasic| %>
+        <% if obasic.officer == current_officer %>
+          <tr>
+            <td><%= obasic.aadhar %></td>
+            <td><%= obasic.name %></td>
+            <td><%= obasic.dob %></td>
+            <td><%= obasic.gender %></td>
+            <td><%= obasic.address %></td>
+            <td><%= obasic.pincode %></td>
+            <td><%= obasic.mob_no %></td>
+            <td><%= link_to 'Show', obasic %></td>
+            <td><%= link_to 'Edit', edit_obasic_path(obasic) %></td>
+            <td><%= link_to 'Destroy', obasic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+
+<% else %>
+
+  <%= link_to 'Add Basic Details', new_obasic_path %>
+
+<% end %>
+
+<%= link_to 'Home', 'officer' %>
