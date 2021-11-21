@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Surveyno</th>
+      <th>Area</th>
+      <th>Village</th>
+      <th>Agrioffice</th>
+      <th>District</th>
+      <th>Ownershiptype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lands.each do |land| %>
+      <% if fbasic.farmer == current_farmer %>
+        <tr>
+          <td><%= land.surveyno %></td>
+          <td><%= land.area %></td>
+          <td><%= land.village %></td>
+          <td><%= land.agrioffice %></td>
+          <td><%= land.district %></td>
+          <td><%= land.ownershiptype %></td>
+          <td><%= link_to 'Show', land %></td>
+          <td><%= link_to 'Edit', edit_land_path(land) %></td>
+          <td><%= link_to 'Destroy', land, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Land', new_land_path %>
+
+<br>
+
+<%= link_to 'Home', 'farmer' %>

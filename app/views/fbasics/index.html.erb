@@ -2,7 +2,7 @@
 
 <h1>Basic Details</h1>
 
-<% if @fbasics.length > 0 %>
+<% if @fbasics.length > 1 %>
   <table>
     <thead>
       <tr>
@@ -43,5 +43,7 @@
   <%= link_to 'Add Basic Details', new_fbasic_path %>
 
 <% end %>
+
+<br>
 
 <%= link_to 'Home', 'farmer' %>

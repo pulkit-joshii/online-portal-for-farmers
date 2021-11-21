@@ -1,0 +1,51 @@
+<%= form_with(model: land) do |form| %>
+  <% if land.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(land.errors.count, "error") %> prohibited this land from being saved:</h2>
+
+      <ul>
+        <% land.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :surveyno %>
+    <%= form.text_field :surveyno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area %>
+    <%= form.text_field :area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :village %>
+    <%= form.text_field :village %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agrioffice %>
+    <%= form.text_field :agrioffice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :district %>
+    <%= form.text_field :district %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ownershiptype %>
+    <%= form.text_field :ownershiptype %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :farmer_id, id: :land_farmer_id, value: current_farmer.id, type: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Surveyno:</strong>
+  <%= @land.surveyno %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @land.area %>
+</p>
+
+<p>
+  <strong>Village:</strong>
+  <%= @land.village %>
+</p>
+
+<p>
+  <strong>Agrioffice:</strong>
+  <%= @land.agrioffice %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @land.district %>
+</p>
+
+<p>
+  <strong>Ownershiptype:</strong>
+  <%= @land.ownershiptype %>
+</p>
+
+<%= link_to 'Edit', edit_land_path(@land) %> |
+<%= link_to 'Back', lands_path %>
