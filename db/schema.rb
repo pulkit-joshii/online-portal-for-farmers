@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_174621) do
+ActiveRecord::Schema.define(version: 2021_11_22_053919) do
 
   create_table "compensations", force: :cascade do |t|
     t.string "natcalname"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2021_11_21_174621) do
 
   create_table "nat_calamities", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "nctype"
     t.string "month"
     t.string "year"
     t.datetime "created_at", precision: 6, null: false
