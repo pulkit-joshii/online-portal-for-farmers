@@ -1,6 +1,5 @@
 class ObasicsController < ApplicationController
   before_action :set_obasic, only: %i[ show edit update destroy ]
-  before_action :authenticate_officer!
   
   # GET /obasics or /obasics.json
   def index

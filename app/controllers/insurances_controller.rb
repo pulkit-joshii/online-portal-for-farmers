@@ -1,6 +1,5 @@
 class InsurancesController < ApplicationController
   before_action :set_insurance, only: %i[ show edit update destroy ]
-  before_action :authenticate_farmer!
 
   # GET /insurances or /insurances.json
   def index

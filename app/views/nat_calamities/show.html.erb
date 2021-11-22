@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @nat_calamity.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @nat_calamity.type %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @nat_calamity.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @nat_calamity.year %>
+</p>
+
+<%= link_to 'Edit', edit_nat_calamity_path(@nat_calamity) %> |
+<%= link_to 'Back', nat_calamities_path %>
