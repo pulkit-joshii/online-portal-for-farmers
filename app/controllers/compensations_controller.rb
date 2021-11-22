@@ -1,6 +1,5 @@
 class CompensationsController < ApplicationController
   before_action :set_compensation, only: %i[ show edit update destroy ]
-  before_action :authenticate_farmer!
 
   # GET /compensations or /compensations.json
   def index

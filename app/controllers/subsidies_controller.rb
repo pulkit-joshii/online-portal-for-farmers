@@ -1,6 +1,5 @@
 class SubsidiesController < ApplicationController
   before_action :set_subsidy, only: %i[ show edit update destroy ]
-  before_action :authenticate_farmer!
 
   # GET /subsidies or /subsidies.json
   def index

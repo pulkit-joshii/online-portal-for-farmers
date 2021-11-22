@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_11_21_174621) do
   create_table "fbasics", force: :cascade do |t|
     t.string "aadhar"
     t.string "name"
-    t.date "string"
+    t.string "dob"
     t.string "gender"
     t.string "address"
     t.string "pincode"
