@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%# <p id="notice"><%= notice %></p>
 
 <h1>Nat Calamities</h1>
 
@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Type</th>
+      <th>NC Type</th>
       <th>Month</th>
       <th>Year</th>
       <th colspan="3"></th>
@@ -17,7 +17,7 @@
     <% @nat_calamities.each do |nat_calamity| %>
       <tr>
         <td><%= nat_calamity.name %></td>
-        <td><%= nat_calamity.type %></td>
+        <td><%= nat_calamity.nctype %></td>
         <td><%= nat_calamity.month %></td>
         <td><%= nat_calamity.year %></td>
         <td><%= link_to 'Show', nat_calamity %></td>
@@ -31,3 +31,7 @@
 <br>
 
 <%= link_to 'New Nat Calamity', new_nat_calamity_path %>
+
+<br>
+
+<%= link_to 'Home', 'officer' %>

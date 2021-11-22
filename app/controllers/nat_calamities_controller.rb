@@ -64,6 +64,6 @@ class NatCalamitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def nat_calamity_params
-      params.require(:nat_calamity).permit(:name, :type, :month, :year)
+      params.require(:nat_calamity).permit(:name, :nctype, :month, :year)
     end
 end
