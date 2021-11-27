@@ -5,4 +5,8 @@ class HomeController < ApplicationController
   end
   def officer
   end
+  def servicesO
+  end
+  def servicesF
+  end
 end

@@ -1,29 +1,163 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <title>E-Farmer</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,,600,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="menu_btn-style ">
+            <button onclick="closeNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div class="overlay-content">
+            <a class="" href="officer.html">
+                Home
+              </a>
+              <% if officer_signed_in? %>
+
+              <a class="" href="servicesO.html">
+        
+                Services
+              </a>
+              <% else %>
+              <%= link_to 'Sign Up', new_officer_registration_path %>
+              
+              <%= link_to 'Services', new_officer_session_path , class:"active" %>
+              <% end %>
+              <a class="" href="about_us.html">
+                About Us
+              </a>
+              <a class="" href="Contact_us.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <a class="navbar-brand" href="officer.html">
+            <span>
+              E-Farmer
+            </span>
+            </a>
+        <div class="user_option">
+          
+          <a href="">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <!-- contact section -->
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <section class="contact_section layout_padding section_pl ">
+    <div class="container py_mobile_45">
+      <div class="heading_container">
+        <h2>Sign <span>Up</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+               <h4 style="color:white;">Enter Username</h4>
+               <div class="field">
+               <%= f.email_field :email,placeholder: "Username" ,autofocus: true, autocomplete: "email" %>
+            </div>
+            <h4 style="color:white;">Enter Password</h4>
+            <div class="field">
+            
+            <% if @minimum_password_length %>
+           <h4 style="color:white;"> <em>(<%= @minimum_password_length %> characters minimum)</em></h4>
+            <% end %>
+            <%= f.password_field :password,placeholder:"Password", autocomplete: "new-password" %>
+          </div>
+        
+              <h4 style="color:white;">Repeat Password</h4>
+                        <div class="field">
+              <%= f.password_field :password_confirmation,placeholder:"Password", autocomplete: "new-password" %>
+            </div>
+              
+              <div class="d-flex ">
+              <div class="actions">
+              <button>Sign Up<%f.submit "Sign up" %></button>
+            
+           </div>
+           </div>
+         <% end %>
+             
+        
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+  <!-- end contact section -->
 
-<%= render "devise/shared/links" %>
+
+  
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved. Design by
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+  <br>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+ 
+
+</body>
+
+</html>
