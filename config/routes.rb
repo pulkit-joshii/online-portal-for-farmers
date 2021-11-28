@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   
   resources :subsidies
 
-  resources :crops
+  resources :crops do 
+    member do
+      get :approve
+    end
+  end
   
   resources :lands
   
