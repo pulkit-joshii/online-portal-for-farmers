@@ -91,25 +91,25 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
-        <tr>
+    <table class="table-dark table-striped" >
+    <thead >
+        <tr >
             <th>Name</th>
             <th>Type</th>
             <th>Month</th>
             <th>Year</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody >
     <% @nat_calamities.each do |nat_calamity| %>
       <tr>
         <td><%= nat_calamity.name %></td>
         <td><%= nat_calamity.nctype %></td>
         <td><%= nat_calamity.month %></td>
         <td><%= nat_calamity.year %></td>
-        <td><%= link_to 'Show', nat_calamity %></td>
-        <td><%= link_to 'Edit', edit_nat_calamity_path(nat_calamity) %></td>
-        <td><%= link_to 'Destroy', nat_calamity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', nat_calamity , class:"btn btn-light"%></td>
+        <td><%= link_to 'Edit', edit_nat_calamity_path(nat_calamity) ,class:"btn btn-primary"%></td>
+        <td><%= link_to 'Destroy', nat_calamity, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
