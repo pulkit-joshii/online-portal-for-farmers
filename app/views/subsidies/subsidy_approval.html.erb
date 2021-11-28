@@ -107,7 +107,11 @@
               <td><%= subsidy.surveyno %></td>
               <td><%= subsidy.cropname %></td>
               <td><%= subsidy.amount %></td>
-              <td><%= link_to 'Approve', data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Approve', approve_subsidy_path(id: subsidy.id) %></td>
+              subsidy.approved = false
+            </tr>
+          <% else %>
+            <tr>
             </tr>
           <% end %>
         <% end %>

@@ -1,5 +1,3 @@
-<%# <p id="notice"><%= notice %></p>
-
 <h1>Insurances</h1>
 
 <table>
@@ -23,7 +21,10 @@
           <td><%= insurance.amount %></td>
           <td><%= insurance.rate %></td>
           <td><%= insurance.year %></td>
-          <td><%= link_to 'Grant', data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Grant', approve_insurance_path(id: insurance.id) %></td>
+        </tr>
+      <% else %>
+        <tr>
         </tr>
       <% end %>
     <% end %>

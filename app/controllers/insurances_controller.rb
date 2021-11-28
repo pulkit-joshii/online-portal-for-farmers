@@ -1,5 +1,5 @@
 class InsurancesController < ApplicationController
-  before_action :set_insurance, only: %i[ show edit update destroy ]
+  before_action :set_insurance, only: %i[ show edit update destroy approve ]
 
   # GET /insurances or /insurances.json
   def index
@@ -45,6 +45,15 @@ class InsurancesController < ApplicationController
         format.json { render json: @insurance.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def approve
+    if @insurance.update(approved: false)
+      phone = @insurance.farmer.fbasic.mobno
+      message = "Insurance amount of Rs.#{@insurance.amount} has been granted."
+      TwilioTextMessenger.new(message, phone).call
+    end
+    redirect_to "/insurance_approval"
   end
 
   # DELETE /insurances/1 or /insurances/1.json
