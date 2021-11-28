@@ -2,11 +2,23 @@ Rails.application.routes.draw do
 
   resources :nat_calamities
 
-  resources :compensations
+  resources :compensations do 
+    member do
+      get :approve
+    end
+  end
 
-  resources :insurances
+  resources :insurances do 
+  member do
+    get :approve
+  end
+end
   
-  resources :subsidies
+  resources :subsidies do 
+    member do
+      get :approve
+    end
+  end
 
   resources :crops do 
     member do

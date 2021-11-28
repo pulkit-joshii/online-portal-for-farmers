@@ -1,5 +1,5 @@
 class SubsidiesController < ApplicationController
-  before_action :set_subsidy, only: %i[ show edit update destroy ]
+  before_action :set_subsidy, only: %i[ show edit update destroy approve ]
 
   # GET /subsidies or /subsidies.json
   def index
@@ -54,6 +54,15 @@ class SubsidiesController < ApplicationController
       format.html { redirect_to subsidies_url, notice: "Subsidy was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def approve
+    if @subsidy.update(approved: false)
+      phone = @subsidy.farmer.fbasic.mobno
+      message = "Your subsidy amount of Rs.#{@subsidy.amount} has been approved."
+      TwilioTextMessenger.new(message, phone).call
+    end
+    redirect_to "/subsidy_approval"
   end
 
   private

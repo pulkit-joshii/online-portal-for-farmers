@@ -1,37 +1,3 @@
-<<<<<<< HEAD
-<h1>Lands</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Surveyno</th>
-      <th>Area</th>
-      <th>Village</th>
-      <th>Agrioffice</th>
-      <th>District</th>
-      <th>Ownershiptype</th>
-      <%# <th>ID</th> %>
-      <%# <th>Approval</th> %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% Land.all.each do |land| %>
-      <% if land.approved? %>
-        <tr>
-          <td><%= land.surveyno %></td>
-          <td><%= land.area %></td>
-          <td><%= land.village %></td>
-          <td><%= land.agrioffice %></td>
-          <td><%= land.district %></td>
-          <td><%= land.ownershiptype %></td>
-          <td><%= link_to 'Approve', approve_land_path(id: land.id) %></td>
-          land.approved = false
-        </tr>
-      <% else %>
-        <tr>
-=======
 <!DOCTYPE html>
 <html>
    
@@ -134,9 +100,7 @@
             <th>Agriculture Office</th>
             <th>District</th>
             <th>Ownership Type</th>
-            <%# <th>ID</th> %>
             <th>Approval</th>
->>>>>>> 042adaaebd7fc18cda872e53c775a76ff3a5229c
         </tr>
         </thead>
         <tbody>
@@ -149,9 +113,11 @@
               <td><%= land.agrioffice %></td>
               <td><%= land.district %></td>
               <td><%= land.ownershiptype %></td>
-              <%# <td><%= land.farmer_id %></td> 
-              <%# <td><%= land.approved %></td> 
-              <td><%= link_to 'Approve', data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Approve', approve_land_path(id: land.id) %></td>
+              land.approved = false
+            </tr>
+          <% else %>
+            <tr>
             </tr>
           <% end %>
         <% end %>

@@ -1,5 +1,5 @@
 class CompensationsController < ApplicationController
-  before_action :set_compensation, only: %i[ show edit update destroy ]
+  before_action :set_compensation, only: %i[ show edit update destroy approve ]
 
   # GET /compensations or /compensations.json
   def index
@@ -45,6 +45,15 @@ class CompensationsController < ApplicationController
         format.json { render json: @compensation.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def approve
+    if @compensation.update(approved: false)
+      phone = @compensation.farmer.fbasic.mobno
+      message = "Your compensation amount of Rs.#{@compensation.amount} has been approved."
+      TwilioTextMessenger.new(message, phone).call
+    end
+    redirect_to "/compensation_approval"
   end
 
   # DELETE /compensations/1 or /compensations/1.json
