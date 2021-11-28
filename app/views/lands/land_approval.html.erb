@@ -100,7 +100,6 @@
             <th>Agriculture Office</th>
             <th>District</th>
             <th>Ownership Type</th>
-            <%# <th>ID</th> %>
             <th>Approval</th>
         </tr>
         </thead>
@@ -114,9 +113,11 @@
               <td><%= land.agrioffice %></td>
               <td><%= land.district %></td>
               <td><%= land.ownershiptype %></td>
-              <%# <td><%= land.farmer_id %></td> 
-              <%# <td><%= land.approved %></td> 
-              <td><%= link_to 'Approve', data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Approve', approve_land_path(id: land.id) %></td>
+              land.approved = false
+            </tr>
+          <% else %>
+            <tr>
             </tr>
           <% end %>
         <% end %>

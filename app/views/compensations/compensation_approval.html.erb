@@ -106,7 +106,11 @@
         <tr>
           <td><%= compensation.natcalname %></td>
           <td><%= compensation.amount %></td>
-          <td><%= link_to 'Approve', data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Approve', approve_compensation_path(id: compensation.id) %></td>
+          compensation.approved = false
+        </tr>
+      <% else %>
+        <tr>
         </tr>
       <% end %>
     <% end %>

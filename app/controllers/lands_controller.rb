@@ -1,5 +1,5 @@
 class LandsController < ApplicationController
-  before_action :set_land, only: %i[ show edit update destroy ]
+  before_action :set_land, only: %i[ show edit update destroy approve ]
 
   # GET /lands or /lands.json
   def index
@@ -54,6 +54,15 @@ class LandsController < ApplicationController
       format.html { redirect_to lands_url, notice: "Land was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def approve
+    if @land.update(approved: false)
+      phone = @land.farmer.fbasic.mobno
+      message = "Your land details have been approved."
+      TwilioTextMessenger.new(message, phone).call
+    end
+    redirect_to "/land_approval"
   end
 
   private
