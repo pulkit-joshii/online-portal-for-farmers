@@ -92,8 +92,8 @@
       </div>
     
     <% if @obasics.length > 0 %>
-    <table class="table_crop">
-      <thead>
+    <table class=" table table-light table-striped"  >
+    <thead  class="table-dark">
         <tr>
           <th>Aadhar</th>
           <th>Name</th>
@@ -117,8 +117,8 @@
             <td><%= obasic.address %></td>
             <td><%= obasic.pincode %></td>
             <td><%= obasic.mob_no %></td>
-            <td><%= link_to 'Edit', edit_obasic_path(obasic) %></td>
-            <td><%= link_to 'Destroy', obasic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_obasic_path(obasic),class:"btn btn-primary" %></td>
+            <td><%= link_to 'Destroy', obasic, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
           </tr>
         <% end %>
       <% end %>
@@ -126,7 +126,7 @@
     </table>
     <% else %>
     <br>
-     <%= link_to 'Add Basic Details', new_obasic_path ,class:"button2" %>
+     <%= link_to 'Add Basic Details', new_obasic_path ,class:"btn btn-success" %>
 
     <% end %>
 </div>

@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             <th>Surveyno</th>
             <th>Cropname</th>
@@ -107,9 +107,9 @@
           <td><%= subsidy.surveyno %></td>
           <td><%= subsidy.cropname %></td>
           <td><%= subsidy.amount %></td>
-          <td><%= link_to 'Show', subsidy %></td>
-          <td><%= link_to 'Edit', edit_subsidy_path(subsidy) %></td>
-          <td><%= link_to 'Destroy', subsidy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', subsidy,class:"btn btn-primary" %></td>
+          <td><%= link_to 'Edit', edit_subsidy_path(subsidy),class:"btn btn-primary" %></td>
+          <td><%= link_to 'Destroy', subsidy, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
         </tr>
       <% end %>
     <% end %>
@@ -118,7 +118,7 @@
 
 <br>
 
-<%=link_to 'New Subsidy', new_subsidy_path,class:"button2" %>
+<%=link_to 'New Subsidy', new_subsidy_path,class:"btn btn-success" %>
 
 <br>
     
@@ -128,16 +128,7 @@
   <!-- end we do section -->
   <br>
 
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved. Design by
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </div>
-  </footer>
-  <!-- footer section -->
+
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>

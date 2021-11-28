@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop">
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             <th>Survey Number</th>
             <th>Crop Name</th>
@@ -107,8 +107,8 @@
               <td><%= subsidy.surveyno %></td>
               <td><%= subsidy.cropname %></td>
               <td><%= subsidy.amount %></td>
-              <td><%= link_to 'Approve', approve_subsidy_path(id: subsidy.id) %></td>
-              subsidy.approved = false
+              <td><%= link_to 'Approve', approve_subsidy_path(id: subsidy.id) ,class:"btn btn-success"%></td>
+              <% subsidy.approved = false%>
             </tr>
           <% else %>
             <tr>

@@ -91,13 +91,14 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
+    <table class=" table table-light table-striped"  >
+    <thead  class="table-dark">
         <tr>
             <th>Name</th>
             <th>Type</th>
             <th>Month</th>
             <th>Year</th>
+            <th colspan="1"></th>
         </tr>
     </thead>
     <tbody>
@@ -107,14 +108,14 @@
         <td><%= @nat_calamity.nctype %></td>
         <td><%= @nat_calamity.month %></td>
         <td><%= @nat_calamity.year %></td>
-        <td><%= link_to 'Edit', edit_nat_calamity_path(@nat_calamity) %></td>
+        <td><%= link_to 'Edit', edit_nat_calamity_path(@nat_calamity),class:"btn btn-primary" %></td>
        
       </tr>
     
   </tbody>
 </table>
 <br>
-<%= link_to 'Back', nat_calamities_path,class:"button2" %>
+<%= link_to 'Back', nat_calamities_path,class:"btn btn-success" %>
 
     
 </div>

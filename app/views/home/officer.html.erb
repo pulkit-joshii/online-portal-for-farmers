@@ -93,9 +93,7 @@
             <%= link_to 'Sign Up', new_officer_registration_path %>
             <%= link_to 'Services', new_officer_session_path %>
             <% end %>
-            <a class="" href="about_us.html">
-              About Us
-            </a>
+            
             <a class="" href="Contact_us.html">
               Contact Us
             </a>
@@ -103,7 +101,7 @@
         </div>
         <a class="navbar-brand" href="officer.html">
           <span>
-            E-Farmer 
+           <h1> E-Farmer </h1>
           </span>
           </a>
          
@@ -113,8 +111,10 @@
         <div class="user_option">
         <% if officer_signed_in?%>
           <a href="">
-            <i class="fa fa-user" aria-hidden="true"> <br>you are <br>Logged in</i>
+            <i class="fa fa-user" aria-hidden="true"></i> <br>you are <br>Logged in
           </a>
+          <br>
+          <% if officer_signed_in? %>  <%= link_to 'Sign Out', destroy_officer_session_path, method: :delete,class:"btn btn-warning" %><% else %> Hello Officer<% end %>
           <% else %>
           
             <%= link_to 'Login', new_officer_session_path %>
@@ -128,9 +128,10 @@
     <section class="slider_section position-relative">
       <a class="navbar-brand" href="">
         <span>
-          E-Farmer <span class="tab"></span><% if officer_signed_in? %>  <%= link_to 'Sign Out', destroy_officer_session_path, method: :delete %><% else %> Hello Officer<% end %>
+          E-Farmer <span class="tab"></span>
         </span>
       </a>
+      
       <div class="box">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -138,7 +139,7 @@
               <div class="row">
                 <div class="col-lg-10 ml-auto">
                   <div class="detail-box">
-                    <h1 style="color: rgb(173, 11, 11);">
+                    <h1 style="color: 	rgb(0, 128, 0);">
                       Online Portal For Farmers
                     </h1>
                    
@@ -273,11 +274,7 @@
                 </p>
               </div>
             </div>
-            <div class="btn-box">
-              <a href="">
-                Read More
-              </a>
-            </div>
+            
           </div>
         </div>
         <div class="col-md-4">
@@ -297,11 +294,7 @@
                 </p>
               </div>
             </div>
-            <div class="btn-box">
-              <a href="">
-                Read More
-              </a>
-            </div>
+           
           </div>
         </div>
         <div class="col-md-4">
@@ -399,11 +392,7 @@
                 </p>
               </div>
             </div>
-            <div class="btn-box">
-              <a href="">
-                Read More
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -412,45 +401,63 @@
 
   <!-- end choose section -->
 
+  <!-- client section -->
 
-
-  <!-- contact section -->
-
-  <section class="contact_section layout_padding section_pl ">
-    <div class="container py_mobile_45">
+  <section class="client_section layout_padding section_pr">
+    <div class="container">
       <div class="heading_container">
-        <h2>Get <span>In Touch</span></h2>
+        <h2>
+         About Us
+        </h2>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" placeholder="Full Name " />
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl_carousel">
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client-img1.jpg" alt="" />
               </div>
-              <div>
-                <input type="text" placeholder="Phone number" />
+              <div class="detail-box">
+                <h5>
+                  Steven White
+                </h5>
+                <h6>
+                  Look even
+                </h6>
+                <p>
+                  words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsumwords which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                </p>
               </div>
-              <div>
-                <input type="email" placeholder="Email" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client-img2.jpg" alt="" />
               </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
+              <div class="detail-box">
+                <h5>
+                  Hanna Jonas
+                </h5>
+                <h6>
+                  Look even
+                </h6>
+                <p>
+                  words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsumwords which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                </p>
               </div>
-              <div class="d-flex ">
-                <button>
-                  SEND
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-        
       </div>
     </div>
   </section>
 
-  <!-- end contact section -->
+  <!-- end client section -->
+
+<br>
+
+  
 <br>
 
 <!-- footer section -->

@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             <th>Surveyno</th>
             <th>Area</th>
@@ -117,9 +117,9 @@
           <td><%= land.ownershiptype %></td>
           <%# <td><%= land.farmer_id %></td> 
           <%# <td><%= land.approved %></td> 
-          <td><%= link_to 'Show', land %></td>
-          <td><%= link_to 'Edit', edit_land_path(land) %></td>
-          <td><%= link_to 'Destroy', land, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', land ,class:"btn btn-primary"%></td>
+          <td><%= link_to 'Edit', edit_land_path(land) ,class:"btn btn-primary"%></td>
+          <td><%= link_to 'Destroy', land, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
         </tr>
       <% end %>
     <% end %>
@@ -128,7 +128,7 @@
 
 <br>
 
-<%= link_to 'New Land', new_land_path ,class:"button2" %>
+<%= link_to 'New Land', new_land_path ,class:"btn btn-success" %>
 
 <br>
     

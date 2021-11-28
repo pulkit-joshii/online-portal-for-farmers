@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
           <th>Surveyno</th>
           <th>Name</th>
@@ -107,9 +107,9 @@
           <td><%= crop.surveyno %></td>
           <td><%= crop.name %></td>
           <td><%= crop.area %></td>
-          <td><%= link_to 'Show', crop %></td>
-          <td><%= link_to 'Edit', edit_crop_path(crop) %></td>
-          <td><%= link_to 'Destroy', crop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', crop,class:"btn btn-primary" %></td>
+          <td><%= link_to 'Edit', edit_crop_path(crop),class:"btn btn-primary" %></td>
+          <td><%= link_to 'Destroy', crop, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
         </tr>
       <% end %>
     <% end %>
@@ -118,7 +118,7 @@
 
 <br>
 
-<%= link_to 'Add New Crop', new_crop_path ,class:"button2" %>
+<%= link_to 'Add New Crop', new_crop_path ,class:"btn btn-success" %>
 
 <br>
     

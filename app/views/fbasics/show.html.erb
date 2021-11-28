@@ -91,8 +91,8 @@
       </div>
     
   
-    <table class="table_crop">
-      <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
           <th>Aadhar</th>
           <th>Name</th>
@@ -116,7 +116,7 @@
             <td><%= @fbasic.address %></td>
             <td><%= @fbasic.pincode %></td>
             <td><%= @fbasic.mobno %></td>
-            <td><%= link_to 'Edit', edit_fbasic_path(@fbasic) %> </td>
+            <td><%= link_to 'Edit', edit_fbasic_path(@fbasic),class:"btn btn-primary" %> </td>
             
           </tr>
         
@@ -124,7 +124,7 @@
     </tbody>
     </table>
     <br>
-    <%=link_to 'Back', fbasics_path,class:"button2"%>
+    <%=link_to 'Back', fbasics_path,class:"btn btn-success"%>
    
 </div>
 

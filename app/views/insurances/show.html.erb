@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
           <th>Surveyno</th>
           <th>Cropname</th>
@@ -110,14 +110,14 @@
           <td><%= @insurance.amount %></td>
           <td><%= @insurance.rate %></td>
           <td><%= @insurance.year %></td>
-        <td><%= link_to 'Edit', edit_insurance_path(@insurance) %></td>
+        <td><%= link_to 'Edit', edit_insurance_path(@insurance) ,class:"btn btn-primary"%></td>
        
       </tr>
     
   </tbody>
 </table>
 <br>
-<%= link_to 'Back', insurances_path,class:"button2" %>
+<%= link_to 'Back', insurances_path,class:"btn btn-success" %>
 
     
 </div>

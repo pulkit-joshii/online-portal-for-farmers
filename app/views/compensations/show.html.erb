@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             <th>Natcalname</th>
             <th>Amount</th>
@@ -104,14 +104,14 @@
       <tr>
           <td><%= @compensation.natcalname %></td>
           <td><%= @compensation.amount %></td>
-        <td><%= link_to 'Edit', edit_compensation_path(@compensation) %></td>
+        <td><%= link_to 'Edit', edit_compensation_path(@compensation) ,class:"btn btn-primary"%></td>
        
       </tr>
     
   </tbody>
 </table>
 <br>
-<%=  link_to 'Back', compensations_path,class:"button2" %>
+<%=  link_to 'Back', compensations_path,class:"btn btn-success" %>
 
     
 </div>
