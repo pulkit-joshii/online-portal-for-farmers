@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :lands
+  resources :lands do 
+    member do
+      get :approve
+    end
+  end
   
   resources :obasics
   

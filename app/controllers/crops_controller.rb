@@ -1,5 +1,5 @@
 class CropsController < ApplicationController
-  before_action :set_crop, only: %i[ show edit update destroy ]
+  before_action :set_crop, only: %i[ show edit update destroy approve ]
 
   # GET /crops or /crops.json
   def index
@@ -54,6 +54,15 @@ class CropsController < ApplicationController
       format.html { redirect_to crops_url, notice: "Crop was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def approve
+    if @crop.update(approved: false)
+      phone = @crop.farmer.fbasic.mobno
+      message = "Your crop details have been approved."
+      TwilioTextMessenger.new(message, phone).call
+    end
+    redirect_to "/crop_approval"
   end
 
   private
