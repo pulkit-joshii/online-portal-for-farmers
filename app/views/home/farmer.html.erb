@@ -115,7 +115,7 @@
             <i class="fa fa-user" aria-hidden="true"> <br>you are <br>Logged in</i>
           </a>
           <br>
-          <% if officer_signed_in? %>  <%= link_to 'Sign Out',  destroy_farmer_session_path, method: :delete,class:"btn btn-warning" %><% else %> Hello Farmer<% end %>
+          <% if farmer_signed_in? %>  <%= link_to 'Sign Out',  destroy_farmer_session_path, method: :delete,class:"btn btn-warning" %><% else %> Hello Farmer<% end %>
           <% else %>
           
             <%= link_to 'Login', new_farmer_session_path %>
@@ -129,7 +129,7 @@
     <section class="slider_section position-relative">
       <a class="navbar-brand" href="">
         <span>
-          E-Farmer <span class="tab"></span>
+          E-Farmer <span class="tab"></span><% if farmer_signed_in? %> <% else %> Hello Farmer<% end %>
         </span>
       </a>
       <div class="box">
@@ -421,7 +421,7 @@
                 </h5>
             
                 <p>
-                  E-Mail : pukit_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567
+                 <b> E-Mail : pukit_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567</b>
 
                 </p>
               </div>
@@ -436,7 +436,7 @@
                 </h5>
             
                 <p>
-                  E-Mail : santhosh_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567
+                 <b> E-Mail : santhosh_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567</b>
                 </p>
               </div>
             </div>
@@ -447,11 +447,11 @@
            
             <div class="detail-box">
               <h5>
-              Saritha K
+              Saritha 
               </h5>
           
               <p>
-                E-Mail : saritha_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567
+                <b>E-Mail : saritha_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567</b>
               </p>
             </div>
           </div>
@@ -467,7 +467,7 @@
             </h5>
         
             <p>
-              E-Mail : Sahil_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567
+             <b> E-Mail : Sahil_m210381cs@nitc.ac.in<br>Contact No. : +91-987654567</b>
             </p>
           </div>
         </div>
