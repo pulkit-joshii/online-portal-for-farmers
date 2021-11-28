@@ -1,56 +1,188 @@
-<%= form_with(model: obasic) do |form| %>
-  <% if obasic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(obasic.errors.count, "error") %> prohibited this obasic from being saved:</h2>
+<!DOCTYPE html>
+<html>
 
-      <ul>
-        <% obasic.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>E-Farmer</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,,600,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="menu_btn-style ">
+            <button onclick="closeNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div class="overlay-content">
+            <a class="active" href="officer.html">
+                Home
+              </a>
+             
+              <a class="" href="servicesO.html">
+                Services
+              </a>
+              <a class="" href="contact.html">
+                About Us
+              </a>
+              <a class="" href="contact.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <a class="navbar-brand" href="officer.html">
+            <span>
+              E-Farmer
+            </span>
+            </a>
+        <div class="user_option">
+          
+          <a href="">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding section_pl ">
+    <div class="container py_mobile_45">
+      <div class="heading_container">
+        <h2>Add <span>Basic Details</span></h2>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+          <%= form_with(model: obasic) do |form| %>
+            <% if obasic.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(obasic.errors.count, "error") %> prohibited this obasic from being saved:</h2>
+          
+                <ul>
+                  <% obasic.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+              <h4 style="color:white;">Enter Your Aadhar Number</h4>
+               <div class="field">
+                
+                <%= form.text_field :aadhar ,placeholder:"Aadhar"%>
+               </div>
+              
+              <h4 style="color:white;">Enter Your Full Name</h4>
+                <div class="field">                
+                <%= form.text_field :name,placeholder:"Name"%>
+                </div>
+              
+              <h4 style="color:white;">Enter Your Date of Birth</h4>
+               <div class="field">
+                <%= form.text_field :dob,placeholder:"dd/mm/yyyy" %>
+               </div>
+              
+              <h4 style="color:white;">Enter Your Gender</h4>
+                <div class="field">
+                <%= form.text_field :gender,placeholder:"Gender"  %>
+                </div>
+              
+              <h4 style="color:white;">Enter Your Address</h4>
+                <div class="field">
+             
+                <%= form.text_field :address ,placeholder:"Address"%>
+                </div>
+             
+              <h4 style="color:white;">Enter Pincode</h4><div class="field">
+              <div class="field">
+                <%= form.text_field :pincode,placeholder:"Pincode" %>
+                </div>
+            
+              <h4 style="color:white;">Enter Your Mobile Number</h4>
+                <div class="field">               
+                <%= form.text_field :mob_no,placeholder:"Mobile Number" %>
+                </div>
+                <div class="field">
+                <%= form.number_field :officer_id, id: :obasic_officer_id, value: current_officer.id, type: :hidden %>
+              </div>
+              <div class="d-flex ">
+              <div class="actions">
+                <button>Add<%form.submit "Add" %></button>
+                </div>
+                </div>
+               
+             <% end %>
+                
+              
+            
+          </div>
+        </div>
+       
+      </div>
     </div>
-  <% end %>
+  </section>
 
-  <div class="field">
-    <%= form.label :aadhar %>
-    <%= form.text_field :aadhar %>
-  </div>
+  <!-- end contact section -->
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :dob %>
-    <%= form.text_field :dob %>
-  </div>
+  
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved. Design by
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+  <br>
 
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
-  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+ 
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+</body>
 
-  <div class="field">
-    <%= form.label :pincode %>
-    <%= form.text_field :pincode %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mob_no %>
-    <%= form.text_field :mob_no %>
-  </div>
-
-  <div class="field">
-    <%= form.number_field :officer_id, id: :obasic_officer_id, value: current_officer.id, type: :hidden %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</html>

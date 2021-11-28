@@ -44,6 +44,10 @@ Rails.application.routes.draw do
   
   get "/officer", to: "home#officer"
 
+  get "/servicesO", to: "home#servicesO"
+
+  get "/servicesF", to: "home#servicesF"
+
   root 'home#index'
 
 end
