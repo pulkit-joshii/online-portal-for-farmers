@@ -3,7 +3,7 @@ class CreateFbasics < ActiveRecord::Migration[6.1]
     create_table :fbasics do |t|
       t.string :aadhar
       t.string :name
-      t.date :string
+      t.date :dob
       t.string :gender
       t.string :address
       t.string :pincode

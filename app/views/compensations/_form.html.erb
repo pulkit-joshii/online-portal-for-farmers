@@ -1,31 +1,164 @@
-<%= form_with(model: compensation) do |form| %>
-  <% if compensation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(compensation.errors.count, "error") %> prohibited this compensation from being saved:</h2>
+<!DOCTYPE html>
+<html>
 
-      <ul>
-        <% compensation.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>E-Farmer</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,,600,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="menu_btn-style ">
+            <button onclick="closeNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div class="overlay-content">
+            <a class="" href="farmer.html">
+                Home
+              </a>
+            
+              <a class="" href="servicesF.html">
+                Services
+              </a>
+              <a class="" href="about_us.html">
+                About Us
+              </a>
+              <a class="" href="Contact_us.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <a class="navbar-brand" href="farmer.html">
+            <span>
+              E-Farmer
+            </span>
+            </a>
+        <div class="user_option">
+          
+          <a href="">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding section_pl ">
+    <div class="container py_mobile_45">
+      <div class="heading_container">
+        <h2>Add/Edit <span> Compensation</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+          <%= form_with(model: compensation) do |form| %>
+            <% if compensation.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(compensation.errors.count, "error") %> prohibited this compensation from being saved:</h2>
+          
+                <ul>
+                  <% compensation.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <h4 style="color:white;">Enter Natural Calamity Name</h4>
+            <div class="field">            
+              <%= form.text_field :natcalname,placeholder:"Natural Calamity Name" %>
+            </div>
+              
+            <h4 style="color:white;">Enter Amount</h4>
+            <div class="field">
+            <%= form.text_field :amount,placeholder:"Amount" %>
+          </div>
+
+            
+          <div class="field">
+            <%= form.number_field :farmer_id, id: :compensation_farmer_id, value: current_farmer.id, type: :hidden %>
+          </div>
+            
+              <div class="d-flex ">
+              <div class="actions">
+                <button>
+                  OK                  
+                  <% form.submit %>
+               
+                </button>
+               
+                </div>
+              </div>
+              <% end %>
+          </div>
+        </div>
+       
+      </div>
     </div>
-  <% end %>
+  </section>
 
-  <div class="field">
-    <%= form.label :natcalname %>
-    <%= form.text_field :natcalname %>
-  </div>
+  <!-- end contact section -->
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
-  </div>
 
-  <div class="field">
-    <%= form.number_field :farmer_id, id: :compensation_farmer_id, value: current_farmer.id, type: :hidden %>
-  </div>
+  
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved. Design by
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+  <br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+ 
+
+</body>
+
+</html>

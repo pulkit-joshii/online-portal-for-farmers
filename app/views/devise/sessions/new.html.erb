@@ -1,26 +1,158 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>E-Farmer</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,,600,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="menu_btn-style ">
+            <button onclick="closeNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div class="overlay-content">
+            <a class="" href="Home_officer.html">
+                Home
+              </a>
+              <a class="active" href="Sign_up.html">
+                Sign Up
+              </a>
+              <a class="" href="services.html">
+                Services
+              </a>
+              <a class="" href="about_us.html">
+                About Us
+              </a>
+              <a class="" href="Contact_us.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <a class="navbar-brand" href="Home_officer.html">
+            <span>
+              E-Farmer
+            </span>
+            </a>
+        <div class="user_option">
+          
+          <a href="">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <!-- contact section -->
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <section class="contact_section layout_padding section_pl ">
+    <div class="container py_mobile_45">
+      <div class="heading_container">
+        <h2> <span>Login</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+               <h4 style="color:white;">Enter Username</h4>
+               <div class="field">
+             
+               <%= f.email_field :email,placeholder:"username", autofocus: true, autocomplete: "email" %>
+             </div>
+             <h4 style="color:white;">Enter Password</h4>
+              <div>
+              <div class="field">
+              <%= f.password_field :password,placeholder:"password", autocomplete: "current-password" %>
+            </div>
+            <% if devise_mapping.rememberable? %>
+            <div class="d-flex ">
+            <div class="field">
+            <h4 style="color:white;">Remember me</h4>
+              <%= f.check_box :remember_me,:style=>" height: 20px ;width: 20px" %>
+              
+            </div>
+            </div>
+          <% end %>
+              
+              <div class="d-flex ">
+              <div class="actions">
+             
+             <button> Log in<% f.submit "Log in" %></button>
+            </div>
+            </div>
+          <% end %>
+             
+            
+          </div>
+        </div>
+       
+      </div>
     </div>
-  <% end %>
+  </section>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+  <!-- end contact section -->
 
-<%= render "devise/shared/links" %>
+
+  
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved. Design by
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+  <br>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+ 
+
+</body>
+
+</html>
