@@ -3,7 +3,7 @@ require 'twilio-ruby'
 
 class TwilioTextMessenger
     attr_reader :message
-    AUTH_TOKEN = '2ef865918d29639522a8de732b482db2'
+    AUTH_TOKEN = '816508a7ededf5b5eb94f74c83af1030'
     ACCOUNT_SID = 'ACc42cb9046b4db9a575453054ec470bbb'
 
     def initialize(message, phone)

@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop">
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             <th>Survey Number</th>
             <th>Area Covered</th>
@@ -113,8 +113,8 @@
               <td><%= land.agrioffice %></td>
               <td><%= land.district %></td>
               <td><%= land.ownershiptype %></td>
-              <td><%= link_to 'Approve', approve_land_path(id: land.id) %></td>
-              land.approved = false
+              <td><%= link_to 'Approve', approve_land_path(id: land.id),class:"btn btn-success" %></td>
+              <% land.approved = false%>
             </tr>
           <% else %>
             <tr>

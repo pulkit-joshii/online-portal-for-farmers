@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop">
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             
             <th>Natural Calamity Name</th>
@@ -106,8 +106,8 @@
         <tr>
           <td><%= compensation.natcalname %></td>
           <td><%= compensation.amount %></td>
-          <td><%= link_to 'Approve', approve_compensation_path(id: compensation.id) %></td>
-          compensation.approved = false
+          <td><%= link_to 'Approve', approve_compensation_path(id: compensation.id),class:"btn btn-success" %></td>
+          <% compensation.approved = false %>
         </tr>
       <% else %>
         <tr>

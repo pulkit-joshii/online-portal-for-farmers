@@ -90,9 +90,9 @@
         <h2><span> </span> Basic Details</h2>
       </div>
     
-    <% if @fbasics.length > 0 %>
-    <table class="table_crop">
-      <thead>
+    <% if @fbasics.length > 1 %>
+    <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
           <th>Aadhar</th>
           <th>Name</th>
@@ -116,8 +116,8 @@
             <td><%= fbasic.address %></td>
             <td><%= fbasic.pincode %></td>
             <td><%= fbasic.mobno %></td>
-            <td><%= link_to 'Edit', edit_fbasic_path(fbasic) %></td>
-            <td><%= link_to 'Destroy', fbasic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_fbasic_path(fbasic),class:"btn btn-primary" %></td>
+            <td><%= link_to 'Destroy', fbasic, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
           </tr>
         <% end %>
       <% end %>
@@ -125,7 +125,7 @@
     </table>
     <% else %>
     <br>
-     <%= link_to 'Add Basic Details', new_fbasic_path ,class:"button2" %>
+     <%= link_to 'Add Basic Details', new_fbasic_path ,class:"btn btn-success" %>
 
     <% end %>
 </div>

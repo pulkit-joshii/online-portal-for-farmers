@@ -91,8 +91,8 @@
       </div>
      
     
-    <table class="table_crop" >
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             <th>Surveyno</th>
             <th>Name</th>
@@ -106,14 +106,14 @@
       <td><%= @crop.surveyno %></td>
       <td><%= @crop.name %></td>
       <td><%= @crop.area %></td>
-        <td><%= link_to 'Edit', edit_crop_path(@crop) %></td>
+        <td><%= link_to 'Edit', edit_crop_path(@crop) ,class:"btn btn-primary"%></td>
        
       </tr>
     
   </tbody>
 </table>
 <br>
-<%=  link_to 'Back', crops_path,class:"button2" %>
+<%=  link_to 'Back', crops_path,class:"btn btn-success" %>
 
     
 </div>

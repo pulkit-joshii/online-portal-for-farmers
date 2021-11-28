@@ -93,8 +93,8 @@
       </div>
      
     
-    <table class="table_crop">
-    <thead>
+      <table class=" table table-light table-striped"  >
+      <thead  class="table-dark">
         <tr>
             <th>Survey Number</th>
             <th>Crop Name</th>
@@ -110,8 +110,8 @@
                   <td style="text-align:center"><%= crop.surveyno %></td>
                   <td style="text-align:center"><%= crop.name %></td>
                   <td style="text-align:center"><%= crop.area %></td>
-                  <td style="text-align:center"><%= link_to 'Approve', approve_crop_path(id: crop.id) %></td>
-                  crop.approved = false
+                  <td style="text-align:center"><%= link_to 'Approve', approve_crop_path(id: crop.id),class:"btn btn-success" %></td>
+                 <% crop.approved = false%>
                 </tr>
               <% else %>
                 <tr>

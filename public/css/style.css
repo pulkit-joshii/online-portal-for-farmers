@@ -166,7 +166,7 @@ h5 {
 
 .navbar-brand span {
   color: #ffffff;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .custom_nav-container {
@@ -1384,16 +1384,8 @@ a:focus {
 .crops_section .box {
   margin-right: 45px;
 }
-.table_crop,th,td{
-  border: 2px solid black;
-  padding: 15px;
-  font-size: 25px;
-}
-.table_land,th,td{
-  border: 2px solid black;
-  padding: 15px;
-  font-size: 20px;
-}
+
+
 .noBorder{
   border:none;
 }
