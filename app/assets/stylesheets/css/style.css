@@ -1390,8 +1390,8 @@ a:focus {
   font-size: 25px;
 }
 .table_land,th,td{
-  border: 2px solid black;
-  padding: 15px;
+  border: none;
+  padding: 0px;
   font-size: 20px;
 }
 .noBorder{
