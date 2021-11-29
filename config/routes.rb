@@ -60,6 +60,8 @@ end
 
   get "/servicesF", to: "home#servicesF"
 
+  get "/Contact_us", to: "home#Contact_us"
+
   root 'home#index'
 
 end
