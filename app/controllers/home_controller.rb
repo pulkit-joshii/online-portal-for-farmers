@@ -9,4 +9,6 @@ class HomeController < ApplicationController
   end
   def servicesF
   end
+  def Contact_us
+  end
 end
