@@ -109,29 +109,40 @@
           
         <br>
         <!--Acount type -->
-        <div class="user_option">
-        <% if farmer_signed_in?%>
-          <a href="">
-            <i class="fa fa-user" aria-hidden="true"> <br>you are <br>Logged in</i>
-          </a>
-          <br>
-          <% if farmer_signed_in? %>  <%= link_to 'Sign Out',  destroy_farmer_session_path, method: :delete,class:"btn btn-warning" %><% else %> Hello Farmer<% end %>
-          <% else %>
-          
-            <%= link_to 'Login', new_farmer_session_path %>
-          
-          <% end %>
-        </div>
+       
       </nav>
     </header>
     <!-- end header section -->
     <!-- slider section -->
     <section class="slider_section position-relative">
-      <a class="navbar-brand" href="">
-        <span>
-          E-Farmer <span class="tab"></span><% if farmer_signed_in? %> <% else %> Hello Farmer<% end %>
-        </span>
-      </a>
+    <table class="table_land">
+       <thead>  
+          <tr>
+            <td><a class="navbar-brand" href="">
+                 <span>
+                  E-Farmer
+                 </span>
+                 </a>
+            </td>
+          
+             <td style="text-align:right;padding:25px">
+             
+               <% if farmer_signed_in?%>
+             
+                <i class="fa fa-user" aria-hidden="true"> you are Logged in</i>
+          
+               <% else %>
+                 
+                Hello Farmer! <%= link_to 'Login', new_farmer_session_path ,class:"btn btn-warning"%>
+              
+                <% end %>
+           
+             <% if farmer_signed_in? %> <%= link_to 'Change Password/Delete Account',  edit_farmer_registration_path,class:"btn btn-warning" %> <% end %>
+             <% if farmer_signed_in? %> <%= link_to 'Sign Out',  destroy_farmer_session_path, method: :delete,class:"btn btn-warning" %><% end %>
+             </td>
+          </tr>
+        </thead>
+    </table>
       <div class="box">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -212,7 +223,7 @@
           <div class="item">
             <div class="box ">
               <div class="img-box">
-                <img src="images/wedo-img3.jpg" alt="" />
+                <img src="images/wedo-img2.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
