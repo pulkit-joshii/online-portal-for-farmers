@@ -136,7 +136,7 @@
            
              <% end %>
         
-          <% if officer_signed_in? %> <%= link_to 'Change Password/Delete Account',  edit_officer_registration_path,class:"btn btn-warning" %> <% end %>
+          <% if officer_signed_in? %> <%= link_to 'Change Password',  edit_officer_registration_path,class:"btn btn-warning" %> <% end %>
           <% if officer_signed_in? %> <%= link_to 'Sign Out',  destroy_officer_session_path, method: :delete,class:"btn btn-warning" %><% end %>
           </td>
        </tr>

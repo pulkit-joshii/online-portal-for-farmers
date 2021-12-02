@@ -1421,14 +1421,14 @@ a:focus {
   text-decoration: none;
   font-size: 25px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: rgb(0, 128, 0);
   margin: 10px 0;
   display: block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   border: 1.5px solid #ffffff;
   border-radius: 5px;
-  width: 350px;
+  width: 400px;
   background-color: #e6e804;
   font-weight: 900;
 }
