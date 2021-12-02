@@ -4,6 +4,7 @@ class CompensationsController < ApplicationController
   # GET /compensations or /compensations.json
   def index
     @compensations = Compensation.all
+    @nat_calamities = NatCalamity.all
   end
 
   # GET /compensations/1 or /compensations/1.json

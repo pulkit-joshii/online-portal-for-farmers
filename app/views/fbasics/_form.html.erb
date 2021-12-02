@@ -92,7 +92,7 @@
           <%= form_with(model: fbasic) do |form| %>
             <% if fbasic.errors.any? %>
               <div id="error_explanation">
-                <h2><%= pluralize(fbasic.errors.count, "error") %> prohibited this fbasic from being saved:</h2>
+                <h2><%= pluralize(fbasic.errors.count, "error") %> prohibited these basic details from being saved:</h2>
           
                 <ul>
                   <% fbasic.errors.each do |error| %>
