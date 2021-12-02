@@ -91,7 +91,7 @@
           <%= form_with(model: obasic) do |form| %>
             <% if obasic.errors.any? %>
               <div id="error_explanation">
-                <h2><%= pluralize(obasic.errors.count, "error") %> prohibited this obasic from being saved:</h2>
+                <h2><%= pluralize(obasic.errors.count, "error") %> prohibited these basic details from being saved:</h2>
           
                 <ul>
                   <% obasic.errors.each do |error| %>
