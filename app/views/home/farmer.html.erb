@@ -137,7 +137,7 @@
               
                 <% end %>
            
-             <% if farmer_signed_in? %> <%= link_to 'Change Password/Delete Account',  edit_farmer_registration_path,class:"btn btn-warning" %> <% end %>
+             <% if farmer_signed_in? %> <%= link_to 'Change Password',  edit_farmer_registration_path,class:"btn btn-warning" %> <% end %>
              <% if farmer_signed_in? %> <%= link_to 'Sign Out',  destroy_farmer_session_path, method: :delete,class:"btn btn-warning" %><% end %>
              </td>
           </tr>
