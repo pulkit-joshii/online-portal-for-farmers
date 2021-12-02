@@ -91,7 +91,6 @@
         <tr>
             <th>Survey Number</th>
             <th>Crop Name</th>
-            <th>Amount</th>
             <th>Approval</th>
         </tr>
         </thead>
@@ -101,7 +100,7 @@
             <tr>
               <td><%= subsidy.surveyno %></td>
               <td><%= subsidy.cropname %></td>
-              <td><%= subsidy.amount %></td>
+              <% subsidy.amount %>
               <td><%= link_to 'Approve', approve_subsidy_path(id: subsidy.id) ,class:"btn btn-success"%></td>
               <% subsidy.approved = false%>
             </tr>

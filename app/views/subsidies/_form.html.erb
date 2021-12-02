@@ -108,9 +108,9 @@
               <div class="field">              
               <%= form.text_field :cropname,placeholder:"Name" %>
               </div>
-            <h4 style="color:white;">Enter Amount</h4>
+            # <h4 style="color:white;">Enter Amount</h4>
             <div class="field">             
-              <%= form.text_field :amount,placeholder:"Amount" %>
+              <%= form.text_field :amount,placeholder:"Amount", type: :hidden %>
             </div>
             <div class="field">
               <%= form.number_field :farmer_id, id: :subsidy_farmer_id, value: current_farmer.id, type: :hidden %>
