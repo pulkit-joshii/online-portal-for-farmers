@@ -1,4 +1,3 @@
-<%#<p id="notice"><%= notice %></p>
 <!DOCTYPE html>
 <html>
    
@@ -83,47 +82,37 @@
   <section class="crops_section layout_padding section_pr">
     <div class="container">
       <div class="heading_container">
-        <h2><span> </span> Basic Details</h2>
+        <h2><span> </span> Basic Details of Farmers</h2>
       </div>
-    
-    <% if @obasics.length > 0 %>
-    <table class=" table table-light table-striped"  >
-    <thead  class="table-dark">
-        <tr>
-          <th>Aadhar Number</th>
-          <th>Name</th>
-          <th>Dob</th>
-          <th>Gender</th>
-          <th>Address</th>
-          <th>Pincode</th>
-          <th>Mobile Number</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-  
-      <tbody>
-      <% @obasics.each do |obasic| %>
-        <% if obasic.officer == current_officer %>
-          <tr>
-            <td><%= obasic.aadhar %></td>
-            <td><%= obasic.name %></td>
-            <td><%= obasic.dob %></td>
-            <td><%= obasic.gender %></td>
-            <td><%= obasic.address %></td>
-            <td><%= obasic.pincode %></td>
-            <td><%= obasic.mob_no %></td>
-            <td><%= link_to 'Edit', edit_obasic_path(obasic),class:"btn btn-primary" %></td>
-            <td><%= link_to 'Destroy', obasic, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
-          </tr>
-        <% end %>
-      <% end %>
-    </tbody>
-    </table>
-    <% else %>
-    <br>
-     <%= link_to 'Add Basic Details', new_obasic_path ,class:"btn btn-success" %>
 
-    <% end %>
+      <table class=" table table-light table-striped"  >
+        <thead  class="table-dark">
+          <tr>
+            <th>Aadhar</th>
+            <th>Name</th>
+            <th>Dob</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>Mob no</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+    
+        <tbody>
+        <% Fbasic.all.each do |fbasic| %>
+            <tr>
+              <td><%= fbasic.aadhar %></td>
+              <td><%= fbasic.name %></td>
+              <td><%= fbasic.dob %></td>
+              <td><%= fbasic.gender %></td>
+              <td><%= fbasic.address %></td>
+              <td><%= fbasic.pincode %></td>
+              <td><%= fbasic.mobno %></td>
+            </tr>
+        <% end %>
+      </tbody>
+      </table>
 </div>
   </section>
 
