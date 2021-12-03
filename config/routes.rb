@@ -62,6 +62,8 @@ end
 
   get "/Contact_us", to: "home#Contact_us"
 
+  get "/farmers_list", to: "home#farmers_list"
+
   root 'home#index'
 
 end
